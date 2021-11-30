@@ -15,21 +15,21 @@ class Background extends StatelessWidget {
       child: Stack(
         alignment: Alignment.center,
         children: <Widget>[
-          const Positioned(
+          Positioned(
               top: 40,
               left: -70,
-              child: GradientBox(150, 150, 75, [Colors.deepOrange, Colors.orangeAccent])
-          ),
-          const Positioned(
+              child: GradientBox(150, 150, 75,
+                  [Colors.redAccent.shade400, Colors.orange.shade400])),
+          Positioned(
               top: 150,
               right: -55,
-              child: GradientBox(120, 120, 60, [Colors.purpleAccent, Colors.blueAccent])
-          ),
-          const Positioned(
+              child: GradientBox(120, 120, 60,
+                  [Colors.purpleAccent, Colors.blueAccent.shade400])),
+          Positioned(
               bottom: -50,
               left: -55,
-              child: GradientBox(120, 120, 60, [Colors.grey, Colors.blueGrey])
-          ),
+              child: GradientBox(120, 120, 60,
+                  [Colors.purple.shade300, Colors.lightGreenAccent.shade400])),
           child,
         ],
       ),
