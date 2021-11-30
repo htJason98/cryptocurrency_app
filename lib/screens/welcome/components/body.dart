@@ -13,58 +13,69 @@ class Body extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const SizedBox(
-              width: double.infinity,
-              height: 150.0,
-            ),
-            const Text(
-              "motip",
-              style: TextStyle(
-                  fontSize: 50.0,
-                  fontWeight: FontWeight.w900,
-                  color: Colors.white),
-            ),
-            const SizedBox(
-              width: double.infinity,
-              height: 50.0,
-            ),
-            const SizedBox(
-              width: double.infinity,
-              child: Padding(
-                padding: EdgeInsets.all(30.0),
-                child: Text(
-                  "cryptocurrency application",
-                  style: TextStyle(
-                      fontSize: 22.0,
-                      fontWeight: FontWeight.normal,
-                      color: Colors.white),
-                ),
-              ),
-            ),
-            const SizedBox(
-                width: double.infinity,
-                child: Padding(
-                  padding:
-                      EdgeInsets.symmetric(vertical: 30.0, horizontal: 30.0),
-                  child: Text(
-                    "track and manage\nyour coins all\nthe time",
+            Expanded(
+              child: Column(
+                children: const <Widget>[
+                  Text(
+                    "motip",
                     style: TextStyle(
-                        fontSize: 30.0,
-                        fontWeight: FontWeight.bold,
+                        fontSize: 50.0,
+                        fontWeight: FontWeight.w900,
                         color: Colors.white),
-                    textAlign: TextAlign.start,
+                  )
+                ],
+                mainAxisAlignment: MainAxisAlignment.end,
+              ),
+              flex: 3,
+            ),
+            Expanded(
+              child: Column(
+                children: const <Widget>[
+                  SizedBox(
+                    width: double.infinity,
+                    child: Padding(
+                      padding: EdgeInsets.all(40.0),
+                      child: Text(
+                        "cryptocurrency application",
+                        style: TextStyle(
+                            fontSize: 22.0,
+                            fontWeight: FontWeight.normal,
+                            color: Colors.white),
+                      ),
+                    ),
                   ),
-                )),
-            GradientTextButton(
-                child: const Text("Started",
-                    style: TextStyle(color: Colors.white)),
-                verticalPadding: 18,
-                horizontalPadding: 120,
-                colors: const [Colors.blueAccent, Colors.purpleAccent],
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => LoginScreen()));
-                })
+                  SizedBox(
+                      width: double.infinity,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                            vertical: 0.0, horizontal: 40.0),
+                        child: Text(
+                          "track and manage\nyour coins all\nthe time",
+                          style: TextStyle(
+                              fontSize: 30.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
+                          textAlign: TextAlign.start,
+                        ),
+                      )),
+                ],
+                mainAxisAlignment: MainAxisAlignment.end,
+              ),
+              flex: 3,
+            ),
+            Expanded(
+              child: GradientTextButton(
+                  child: const Text("get started",
+                      style: TextStyle(color: Colors.white)),
+                  verticalPadding: 18,
+                  horizontalPadding: 120,
+                  colors: const [Colors.blueAccent, Colors.purpleAccent],
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => LoginScreen()));
+                  }),
+              flex: 2,
+            ),
           ],
         ));
   }
