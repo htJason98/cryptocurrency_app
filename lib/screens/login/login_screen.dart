@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:motip_application/screens/login/components/body.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  LoginScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: const Text("LoginScreen"),
+    return Scaffold(
+      body: LoginState(),
+      backgroundColor: Colors.black,
     );
   }
 }
