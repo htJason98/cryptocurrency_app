@@ -62,8 +62,6 @@ class Body extends StatelessWidget {
                 horizontalPadding: 120,
                 colors: const [Colors.blueAccent, Colors.purpleAccent],
                 onPressed: () {
-                  // ignore: avoid_print
-                  print("Click");
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => LoginScreen()));
                 })
