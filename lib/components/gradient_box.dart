@@ -6,7 +6,9 @@ class GradientBox extends StatelessWidget {
   final double borderRadius;
   final List<Color> colors;
 
-  const GradientBox(this.height, this.width, this.borderRadius, this.colors, {Key? key}) : super(key: key);
+  const GradientBox(this.height, this.width, this.borderRadius, this.colors,
+      {Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,5 +24,25 @@ class GradientBox extends StatelessWidget {
                 colors: colors),
           ),
         ));
+  }
+}
+
+class LinearGradientMask extends StatelessWidget {
+  const LinearGradientMask({required this.child});
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return ShaderMask(
+      shaderCallback: (bounds) {
+        return const RadialGradient(
+          center: Alignment.topLeft,
+          radius: 1,
+          colors: [Colors.red, Colors.blue],
+          tileMode: TileMode.mirror,
+        ).createShader(bounds);
+      },
+      child: child,
+    );
   }
 }

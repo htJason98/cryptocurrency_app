@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:motip_application/components/button.dart';
 import 'package:motip_application/components/gradient_button.dart';
+import 'package:motip_application/components/gradient_box.dart';
 import 'package:motip_application/screens/login/components/background.dart';
 import 'package:motip_application/screens/login/components/custom_page_indicator.dart';
 
 class LoginState extends StatefulWidget {
+  const LoginState({Key? key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() => Body();
 }
@@ -36,7 +41,7 @@ class Body extends State<LoginState> {
               "assets/images/login_image.png",
               width: size.width * 0.5,
             ),
-            flex: 7,
+            flex: 9,
           ),
           Expanded(
             child: SizedBox(
@@ -79,7 +84,7 @@ class Body extends State<LoginState> {
                 ],
               ),
             ),
-            flex: 3,
+            flex: 4,
           ),
           Expanded(
             child: Column(
@@ -98,9 +103,53 @@ class Body extends State<LoginState> {
                       //     MaterialPageRoute(
                       //         builder: (context) => HomeScreen()));
                     }),
+                Container(
+                  margin: const EdgeInsets.symmetric(vertical: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 15),
+                        child: ButtonImage(
+                          icon: LinearGradientMask(
+                            child: SvgPicture.asset(
+                              "assets/images/ic_google.svg",
+                              semanticsLabel: 'Acme Logo',
+                              color: Colors.white,
+                            ),
+                          ),
+                          iconSize: 50,
+                          onPressed: () {},
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 15),
+                        child: ButtonImage(
+                          icon: LinearGradientMask(
+                            child: SvgPicture.asset(
+                              "assets/images/ic_facebook.svg",
+                              semanticsLabel: 'Acme Logo',
+                              color: Colors.white,
+                            ),
+                          ),
+                          iconSize: 50,
+                          onPressed: () {},
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.symmetric(vertical: 0),
+                  child: Html(
+                      data:
+                          """<style>p {text-align: center; line-height: 1.2;}</style>
+                      <p style="color:white;">By signing up, you agree to our<br>
+                      <b>Terms of Use</b> and <b>Privacy Policy</b></p>"""),
+                )
               ],
             ),
-            flex: 3,
+            flex: 5,
           )
         ],
       ),
@@ -116,9 +165,12 @@ class Page1 extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.symmetric(vertical: 0, horizontal: 50),
       child: Text(
-        "always keep\nan eye on\nyour cryptocurrency1",
+        "always keep\nan eye on\nyour cryptocurrency",
         style: TextStyle(
-            fontSize: 30, fontWeight: FontWeight.w800, color: Colors.white),
+            fontSize: 29,
+            fontWeight: FontWeight.w800,
+            color: Colors.white,
+            height: 1.25),
       ),
     );
   }
@@ -132,9 +184,12 @@ class Page2 extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.symmetric(vertical: 0, horizontal: 50),
       child: Text(
-        "always keep\nan eye on\nyour cryptocurrency2",
+        "notify you all the time\nhelping you manage\nyour assets",
         style: TextStyle(
-            fontSize: 30, fontWeight: FontWeight.w800, color: Colors.white),
+            fontSize: 29,
+            fontWeight: FontWeight.w800,
+            color: Colors.white,
+            height: 1.25),
       ),
     );
   }
@@ -148,9 +203,12 @@ class Page3 extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.symmetric(vertical: 0, horizontal: 50),
       child: Text(
-        "always keep\nan eye on\nyour cryptocurrency3",
+        "avoid losing assets\nwhen the market\nfluctuates greatly",
         style: TextStyle(
-            fontSize: 30, fontWeight: FontWeight.w800, color: Colors.white),
+            fontSize: 29,
+            fontWeight: FontWeight.w800,
+            color: Colors.white,
+            height: 1.25),
       ),
     );
   }
