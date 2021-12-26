@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:motip_application/components/gradient_button.dart';
+import 'package:motip_application/components/button.dart';
 import 'package:motip_application/screens/login/login_screen.dart';
 import 'package:motip_application/screens/welcome/components/background.dart';
 

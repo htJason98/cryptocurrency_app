@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:motip_application/components/button.dart';
-import 'package:motip_application/components/gradient_button.dart';
 import 'package:motip_application/components/gradient_box.dart';
 import 'package:motip_application/screens/login/components/background.dart';
 import 'package:motip_application/screens/login/components/custom_page_indicator.dart';
+import 'package:motip_application/screens/login/email/email_login.dart';
 
 class LoginState extends StatefulWidget {
   const LoginState({Key? key}) : super(key: key);
@@ -98,10 +98,10 @@ class Body extends State<LoginState> {
                     horizontalPadding: 100,
                     colors: const [Colors.blueAccent, Colors.pinkAccent],
                     onPressed: () {
-                      // Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //         builder: (context) => HomeScreen()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => EmailLogin()));
                     }),
                 Container(
                   margin: const EdgeInsets.symmetric(vertical: 20),
