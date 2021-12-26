@@ -3,27 +3,20 @@ import 'package:flutter_svg/svg.dart';
 import 'package:motip_application/components/button.dart';
 import 'package:motip_application/components/text.dart';
 import 'package:motip_application/components/text_field.dart';
+import 'package:motip_application/screens/login/email/email_signup.dart';
 
-import 'email_login.dart';
-
-class EmailSignUp extends StatelessWidget {
-  const EmailSignUp({Key? key}) : super(key: key);
+class EmailLogin extends StatelessWidget {
+  const EmailLogin({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: SingleChildScrollView(
-      child: Body(),
-    ));
+    return Scaffold(body: Body());
   }
 }
 
-// ignore: must_be_immutable
 class Body extends StatelessWidget {
-  TextEditingController usernameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-
   Body({Key? key}) : super(key: key);
 
   @override
@@ -57,16 +50,8 @@ class Body extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
                 child: Row(
-                  children: const <Widget>[
-                    TitleText(body: "create\nan account")
-                  ],
+                  children: const <Widget>[TitleText(body: "welcome\nback")],
                 ),
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                child: RegularTextField(
-                    hintText: "your username", controller: usernameController),
               ),
               Padding(
                 padding:
@@ -86,7 +71,7 @@ class Body extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     GradientTextButton(
-                        child: const Text("sign up",
+                        child: const Text("sign in",
                             style: TextStyle(color: Colors.white)),
                         verticalPadding: 18,
                         horizontalPadding: 120,
@@ -98,10 +83,10 @@ class Body extends StatelessWidget {
               GestureDetector(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => EmailLogin()));
+                      MaterialPageRoute(builder: (context) => EmailSignUp()));
                 },
                 child: const QuoteText(
-                  body: "already have an account?",
+                  body: "don't have an account?",
                 ),
               )
             ],

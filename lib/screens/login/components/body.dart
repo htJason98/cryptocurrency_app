@@ -5,7 +5,7 @@ import 'package:motip_application/components/button.dart';
 import 'package:motip_application/components/gradient_box.dart';
 import 'package:motip_application/screens/login/components/background.dart';
 import 'package:motip_application/screens/login/components/custom_page_indicator.dart';
-import 'package:motip_application/screens/login/email/email_login.dart';
+import 'package:motip_application/screens/login/email/email_signup.dart';
 
 class LoginState extends StatefulWidget {
   const LoginState({Key? key}) : super(key: key);
@@ -101,7 +101,7 @@ class Body extends State<LoginState> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => EmailLogin()));
+                              builder: (context) => EmailSignUp()));
                     }),
                 Container(
                   margin: const EdgeInsets.symmetric(vertical: 20),
