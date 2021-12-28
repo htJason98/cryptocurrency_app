@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:motip_application/components/button.dart';
 import 'package:motip_application/components/text.dart';
 import 'package:motip_application/components/text_field.dart';
-
+import 'package:motip_application/screens/home/home_screen.dart';
 import 'email_login.dart';
 
 class EmailSignUp extends StatelessWidget {
@@ -91,7 +91,12 @@ class Body extends StatelessWidget {
                         verticalPadding: 18,
                         horizontalPadding: 120,
                         colors: const [Colors.blueAccent, Colors.purpleAccent],
-                        onPressed: () {}),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomeScreen()));
+                        }),
                   ],
                 ),
               ),
