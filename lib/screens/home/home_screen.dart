@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:motip_application/utils/Strings.dart';
 import 'package:move_to_background/move_to_background.dart';
 
+import 'components/bottom_navigation_bar.dart';
 import 'components/home_page.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -24,27 +24,9 @@ class _HomeScreenState extends State<HomeScreen> {
             tabPages: tabPages,
             onPageChanged: onPageChanged,
             pageController: _pageController),
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _pageIndex,
-          onTap: onTabTapped,
-          backgroundColor: Colors.white,
-          selectedItemColor: Colors.black,
-          unselectedItemColor: Colors.grey,
-          type: BottomNavigationBarType.fixed,
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-                icon: Icon(Icons.home), label: Strings.bottomPageHome),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.money_off_csred_outlined),
-                label: Strings.bottomPageMarket),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.add_chart),
-                label: Strings.bottomPagePortfolio),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.explore), label: Strings.bottomPageExplore),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.settings), label: Strings.bottomPageSettings),
-          ],
+        bottomNavigationBar: CustomBottomNavigationBar(
+          pageIndex: _pageIndex,
+          onTabTapped: onTabTapped,
         ),
       ),
       onWillPop: () async {
@@ -106,78 +88,16 @@ class Body extends StatelessWidget {
       decoration: const BoxDecoration(color: Colors.black),
       child: Column(
         children: [
-          const Expanded(
-            child: Header(),
-            flex: 1,
-          ),
           Expanded(
             child: PageView(
               children: tabPages,
               onPageChanged: onPageChanged,
               controller: pageController,
             ),
-            flex: 8,
+            flex: 1,
           )
         ],
       ),
-    );
-  }
-}
-
-class Header extends StatelessWidget {
-  const Header({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    var padding = MediaQuery.of(context).padding.top;
-    return Padding(
-      padding: EdgeInsets.only(top: padding, bottom: 10),
-      child: SizedBox(
-          width: size.width,
-          child: Column(
-            children: [
-              Expanded(
-                child: Row(
-                  children: [
-                    const Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 15),
-                        child: Text(
-                          "MotipApplication",
-                          style: TextStyle(
-                              fontSize: 22.0,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                          textAlign: TextAlign.start,
-                        ),
-                      ),
-                      flex: 1,
-                    ),
-                    Expanded(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 8),
-                            child:
-                                SvgPicture.asset("assets/images/ic_search.svg"),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 8),
-                            child: SvgPicture.asset(
-                                "assets/images/ic_notification.svg"),
-                          )
-                        ],
-                      ),
-                      flex: 1,
-                    ),
-                  ],
-                ),
-                flex: 1,
-              ),
-            ],
-          )),
     );
   }
 }
