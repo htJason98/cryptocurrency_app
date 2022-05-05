@@ -20,31 +20,37 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return WillPopScope(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Body(
             tabPages: tabPages,
             onPageChanged: onPageChanged,
             pageController: _pageController),
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _pageIndex,
-          onTap: onTabTapped,
-          backgroundColor: Colors.white,
-          selectedItemColor: Colors.black,
-          unselectedItemColor: Colors.grey,
-          type: BottomNavigationBarType.fixed,
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-                icon: Icon(Icons.home), label: Strings.bottomPageHome),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.money_off_csred_outlined),
-                label: Strings.bottomPageMarket),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.add_chart),
-                label: Strings.bottomPagePortfolio),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.explore), label: Strings.bottomPageExplore),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.settings), label: Strings.bottomPageSettings),
-          ],
+        bottomNavigationBar: SizedBox(
+          height: 65,
+          child: BottomNavigationBar(
+            currentIndex: _pageIndex,
+            onTap: onTabTapped,
+            backgroundColor: Colors.white,
+            selectedItemColor: Colors.black,
+            unselectedItemColor: Colors.grey,
+            type: BottomNavigationBarType.fixed,
+            items: const <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.home), label: Strings.bottomPageHome),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.money_off_csred_outlined),
+                  label: Strings.bottomPageMarket),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.add_chart),
+                  label: Strings.bottomPagePortfolio),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.explore),
+                  label: Strings.bottomPageExplore),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.settings),
+                  label: Strings.bottomPageSettings),
+            ],
+          ),
         ),
       ),
       onWillPop: () async {
@@ -90,6 +96,7 @@ class Body extends StatelessWidget {
   final List<Widget> tabPages;
   final Function(int) onPageChanged;
   final PageController pageController;
+
   const Body(
       {Key? key,
       required this.tabPages,
