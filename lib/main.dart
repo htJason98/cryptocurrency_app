@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:motip_application/Screens/Welcome/welcome_screen.dart';
-import 'package:motip_application/constants.dart';
+import 'package:provider/provider.dart';
+import 'managers/theme/theme_manager.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider<ThemeNotifier>(
+    create: (_) => ThemeNotifier(),
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -15,13 +19,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays: [SystemUiOverlay.top]);
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Motip',
-      theme: ThemeData(
-        primaryColor: kPrimaryColor,
-      ),
-      home: const WelcomeScreen(),
-    );
+    return Consumer<ThemeNotifier>(
+        builder: (context, theme, _) => MaterialApp(
+              debugShowCheckedModeBanner: false,
+              title: 'Flutter Motip',
+              theme: theme.getTheme(),
+              home: const WelcomeScreen(),
+            ));
   }
 }
