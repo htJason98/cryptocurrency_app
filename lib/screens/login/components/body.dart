@@ -6,6 +6,7 @@ import 'package:motip_application/components/gradient_box.dart';
 import 'package:motip_application/screens/login/components/background.dart';
 import 'package:motip_application/screens/login/components/custom_page_indicator.dart';
 import 'package:motip_application/screens/login/email/email_signup.dart';
+import 'package:motip_application/utils/Strings.dart';
 
 class LoginState extends StatefulWidget {
   const LoginState({Key? key}) : super(key: key);
@@ -91,7 +92,7 @@ class Body extends State<LoginState> {
               children: [
                 GradientTextButton(
                     child: const Text(
-                      "continue with email",
+                      Strings.continueWithEmail,
                       style: TextStyle(color: Colors.white),
                     ),
                     verticalPadding: 18,
@@ -113,7 +114,7 @@ class Body extends State<LoginState> {
                         child: ButtonImage(
                           icon: LinearGradientMask(
                             child: SvgPicture.asset(
-                              "assets/images/ic_google.svg",
+                              "assets/icons/ic_google.svg",
                               semanticsLabel: 'Acme Logo',
                               color: Colors.white,
                             ),
@@ -127,7 +128,7 @@ class Body extends State<LoginState> {
                         child: ButtonImage(
                           icon: LinearGradientMask(
                             child: SvgPicture.asset(
-                              "assets/images/ic_facebook.svg",
+                              "assets/icons/ic_facebook.svg",
                               semanticsLabel: 'Acme Logo',
                               color: Colors.white,
                             ),
@@ -165,7 +166,7 @@ class Page1 extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.symmetric(vertical: 0, horizontal: 50),
       child: Text(
-        "always keep\nan eye on\nyour cryptocurrency",
+        Strings.firstDescription,
         style: TextStyle(
             fontSize: 29,
             fontWeight: FontWeight.w800,
@@ -184,7 +185,7 @@ class Page2 extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.symmetric(vertical: 0, horizontal: 50),
       child: Text(
-        "notify you all the time\nhelping you manage\nyour assets",
+        Strings.secondDescription,
         style: TextStyle(
             fontSize: 29,
             fontWeight: FontWeight.w800,
@@ -203,7 +204,7 @@ class Page3 extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.symmetric(vertical: 0, horizontal: 50),
       child: Text(
-        "avoid losing assets\nwhen the market\nfluctuates greatly",
+        Strings.thirdDescription,
         style: TextStyle(
             fontSize: 29,
             fontWeight: FontWeight.w800,

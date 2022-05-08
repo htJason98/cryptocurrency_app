@@ -4,6 +4,7 @@ import 'package:motip_application/components/button.dart';
 import 'package:motip_application/components/text.dart';
 import 'package:motip_application/components/text_field.dart';
 import 'package:motip_application/screens/login/email/email_signup.dart';
+import 'package:motip_application/utils/Strings.dart';
 
 class EmailLogin extends StatelessWidget {
   const EmailLogin({Key? key}) : super(key: key);
@@ -38,7 +39,7 @@ class Body extends StatelessWidget {
                       Navigator.of(context).pop();
                     },
                     child: SvgPicture.asset(
-                      "assets/images/ic_caret-left.svg",
+                      "assets/icons/ic_caret-left.svg",
                       semanticsLabel: 'backButton',
                       color: Colors.white,
                       width: 50,
@@ -50,20 +51,20 @@ class Body extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
                 child: Row(
-                  children: const <Widget>[TitleText(body: "welcome\nback")],
+                  children: const <Widget>[TitleText(body: Strings.welcomeBack)],
                 ),
               ),
               Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                 child: RegularTextField(
-                    hintText: "your email", controller: emailController),
+                    hintText: Strings.yourEmail, controller: emailController),
               ),
               Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                 child: RegularTextField(
-                    hintText: "your password", controller: passwordController),
+                    hintText: Strings.yourPassword, controller: passwordController),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 25),
@@ -71,7 +72,7 @@ class Body extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     GradientTextButton(
-                        child: const Text("sign in",
+                        child: const Text(Strings.signIn,
                             style: TextStyle(color: Colors.white)),
                         verticalPadding: 18,
                         horizontalPadding: 120,
@@ -86,7 +87,7 @@ class Body extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => EmailSignUp()));
                 },
                 child: const QuoteText(
-                  body: "don't have an account?",
+                  body: Strings.doNotHaveAccount,
                 ),
               )
             ],

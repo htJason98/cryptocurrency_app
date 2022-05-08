@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:motip_application/components/button.dart';
 import 'package:motip_application/screens/login/login_screen.dart';
 import 'package:motip_application/screens/welcome/components/background.dart';
+import 'package:motip_application/utils/Strings.dart';
 
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
@@ -16,7 +17,7 @@ class Body extends StatelessWidget {
               child: Column(
                 children: const <Widget>[
                   Text(
-                    "motip",
+                    Strings.applicationName,
                     style: TextStyle(
                         fontSize: 50.0,
                         fontWeight: FontWeight.w900,
@@ -35,7 +36,7 @@ class Body extends StatelessWidget {
                     child: Padding(
                       padding: EdgeInsets.all(40.0),
                       child: Text(
-                        "cryptocurrency application",
+                        Strings.applicationType,
                         style: TextStyle(
                             fontSize: 22.0,
                             fontWeight: FontWeight.normal,
@@ -49,7 +50,7 @@ class Body extends StatelessWidget {
                         padding: EdgeInsets.symmetric(
                             vertical: 0.0, horizontal: 40.0),
                         child: Text(
-                          "track and manage\nyour coins all\nthe time",
+                          Strings.applicationDes,
                           style: TextStyle(
                               fontSize: 30.0,
                               fontWeight: FontWeight.bold,
@@ -64,7 +65,7 @@ class Body extends StatelessWidget {
             ),
             Expanded(
               child: GradientTextButton(
-                  child: const Text("get started",
+                  child: const Text(Strings.applicationStarted,
                       style: TextStyle(color: Colors.white)),
                   verticalPadding: 18,
                   horizontalPadding: 120,

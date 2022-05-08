@@ -7,8 +7,8 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [
-        const Expanded(
+      children: const [
+        Expanded(
           child: Header(),
           flex: 1,
         ),
@@ -58,12 +58,12 @@ class Header extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 8),
                             child:
-                                SvgPicture.asset("assets/images/ic_search.svg"),
+                                SvgPicture.asset("assets/icons/ic_search.svg"),
                           ),
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 8),
                             child: SvgPicture.asset(
-                                "assets/images/ic_notification.svg"),
+                                "assets/icons/ic_notification.svg"),
                           )
                         ],
                       ),
@@ -97,6 +97,10 @@ class Body extends StatelessWidget {
           ),
         ],
       ),
+      child: Center(
+          child: Column(
+        children: const [Expanded(child: Text("Home Page"))],
+      )),
     ));
   }
 }
