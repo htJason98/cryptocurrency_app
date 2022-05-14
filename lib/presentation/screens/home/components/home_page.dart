@@ -1,3 +1,4 @@
+import 'package:coingecko_dart/coingecko_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -41,7 +42,7 @@ class Header extends StatelessWidget {
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 15),
                         child: Text(
-                          "MotipApplication",
+                          "Motip",
                           style: TextStyle(
                               fontSize: 22.0,
                               fontWeight: FontWeight.bold,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:motip_application/utils/Dimens.dart';
-import 'package:motip_application/utils/Strings.dart';
+import 'package:motip_application/presentation/utils/Dimens.dart';
+import 'package:motip_application/presentation/utils/Strings.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
   final int pageIndex;

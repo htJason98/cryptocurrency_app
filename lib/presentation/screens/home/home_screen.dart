@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:move_to_background/move_to_background.dart';
-
 import 'components/bottom_navigation_bar.dart';
 import 'components/home_page.dart';
 

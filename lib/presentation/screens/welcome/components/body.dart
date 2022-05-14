@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:motip_application/components/button.dart';
-import 'package:motip_application/screens/login/login_screen.dart';
-import 'package:motip_application/screens/welcome/components/background.dart';
-import 'package:motip_application/utils/Strings.dart';
+import 'package:motip_application/presentation/components/button.dart';
+import 'package:motip_application/presentation/screens/login/login_screen.dart';
+import 'package:motip_application/presentation/screens/welcome/components/background.dart';
+import 'package:motip_application/presentation/utils/Strings.dart';
 
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);

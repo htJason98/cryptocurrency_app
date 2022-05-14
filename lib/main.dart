@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:motip_application/Screens/Welcome/welcome_screen.dart';
 import 'package:provider/provider.dart';
-import 'managers/theme/theme_manager.dart';
+import 'package:motip_application/presentation/theme/theme_manager.dart';
+import 'package:motip_application/presentation/screens/welcome/welcome_screen.dart';
 
 void main() {
   runApp(ChangeNotifierProvider<ThemeNotifier>(

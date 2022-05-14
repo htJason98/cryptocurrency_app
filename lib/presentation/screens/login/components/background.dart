@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:motip_application/components/gradient_box.dart';
+import 'package:motip_application/presentation/components/gradient_box.dart';
 
 class Background extends StatelessWidget {
   final Widget child;

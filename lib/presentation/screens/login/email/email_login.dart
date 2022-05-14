@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:motip_application/components/button.dart';
-import 'package:motip_application/components/text.dart';
-import 'package:motip_application/components/text_field.dart';
-import 'package:motip_application/screens/login/email/email_signup.dart';
-import 'package:motip_application/utils/Strings.dart';
+import 'package:motip_application/presentation/components/button.dart';
+import 'package:motip_application/presentation/components/text.dart';
+import 'package:motip_application/presentation/components/text_field.dart';
+import 'package:motip_application/presentation/screens/login/email/email_signup.dart';
+import 'package:motip_application/presentation/utils/Strings.dart';
 
 class EmailLogin extends StatelessWidget {
   const EmailLogin({Key? key}) : super(key: key);

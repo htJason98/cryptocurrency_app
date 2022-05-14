@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:motip_application/screens/login/components/body.dart';
+import 'package:motip_application/presentation/screens/login/components/body.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({Key? key}) : super(key: key);
